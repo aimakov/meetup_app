@@ -1,10 +1,10 @@
 import './App.css';
-import Toolbar from './Containers/Toolbar/Toolbar'
+import Layout from './Containers/Layout'
 
 function App() {
   return (
     <div className="App">
-      <Toolbar/>
+      <Layout/>
     </div>
   );
 }

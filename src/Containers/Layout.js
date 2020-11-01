@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
-// import classes from './Toolbar.module.css'
-import Event from '../../Components/Event/Event'
-import Aux from '../../Auxiliary/Auxiliary'
+import React, { Component } from 'react';
+import Aux from '../Auxiliary/Auxiliary';
+import Toolbar from '../Components/Toolbar/Toolbar';
 
-class Toolbar extends Component {
+class Layout extends Component {
 
     state = {
         events : [
@@ -21,20 +20,17 @@ class Toolbar extends Component {
         const eventId = this.state.events.findIndex(c => {
             return c.id === eventKey;
         })
-
+        
         this.setState({message: this.state.events[eventId].id})
+        console.log(this.state.message)
     }
 
     render() {
-
+        
         return(
             <Aux>
-                {this.state.events.map((event) => {
-                    return <Event event={event.id} key={event.id} click = {() => this.eventClickedHandler(event.id)}/>
-                }
-                
-            )}
-            {this.state.message}
+            <Toolbar events={this.state.events} clicked={this.eventClickedHandler}/>
+            <div>{this.state.message}</div>
             <div>Sidebar - Meetup options</div>
             <div>Main Window - Setting up an event</div>
             
@@ -45,4 +41,4 @@ class Toolbar extends Component {
     }
 }
 
-export default Toolbar;
+export default Layout;
