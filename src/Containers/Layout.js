@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Aux from '../Auxiliary/Auxiliary';
 import Toolbar from '../Components/Toolbar/Toolbar';
+import Volleyball from '../Components/EventFields/Volleyball/Volleyball';
 
 class Layout extends Component {
 
@@ -33,7 +34,7 @@ class Layout extends Component {
             <div>{this.state.message}</div>
             <div>Sidebar - Meetup options</div>
             <div>Main Window - Setting up an event</div>
-            
+            <Volleyball/>
             </Aux>
             
             // <div className={classes.Toolbar}>Toolbar - Event Types</div>

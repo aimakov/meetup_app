@@ -1,0 +1,56 @@
+.Dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid black;
+    text-align: center;
+    cursor: pointer;
+}
+
+.Dot:hover {
+    background-color: brown;
+}
+
+.Setter {
+    position: absolute;
+    left: 425px;
+    top: 225px;
+}
+
+.FrontLeft {
+    position: absolute;
+    left: 375px;
+    top: 50px;
+}
+
+.FrontRight {
+    position: absolute;
+    left: 375px;
+    top: 400px;
+}
+
+.Serving {
+    position: absolute;
+    left: 100px;
+    top: 400px;
+}
+
+.BackLeft {
+    position: absolute;
+    left: 100px;
+    top: 50px;
+}
+
+.Center {
+    position: absolute;
+    left: 225px;
+    top: 225px;
+}
+
+span {
+    position: absolute;
+    
+}

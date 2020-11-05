@@ -1,0 +1,53 @@
+
+
+.Volleyball {
+    position: relative;
+    left: 18%;
+    margin-top: 50px;
+    width: 1000px;
+    height: 500px;
+    border: 1px solid black;
+}
+
+.LeftBig {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    height: 500px;
+    width: 333px;
+    background-color: #169df7;
+    border: 1px solid black;
+}
+
+.LeftSmall {
+    position: absolute;
+    top: -1px;
+    left: 333px;
+    height: 500px;
+    width: 167px;
+    background-color: #00e5ff;
+    border: 1px solid black;
+}
+
+.RightSmall {
+    position: absolute;
+    top: -1px;
+    left: 500px;
+    height: 500px;
+    width: 167px;
+    background-color: #00e5ff;
+    border: 1px solid black;
+}
+
+.RightBig {
+    position: absolute;
+    top: -1px;
+    left: 667px;
+    height: 500px;
+    width: 333px;
+    background-color: #169df7;
+    border: 1px solid black;
+}
+
+
+
