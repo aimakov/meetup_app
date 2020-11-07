@@ -12,8 +12,57 @@ class VolleyBallCourt extends Component {
             { id: 'Serving', name: 'Serving', player: 'Serving'},
             { id: 'BackLeft', name: 'Back Left', player: 'Back Left'},
             { id: 'Center', name: 'Center', player: 'Center'},
+        ],
+
+        players : [
+            { name: 'Muhammadjon Boboev', rank: 10 },
+            { name: 'Temuge Munkhbat', rank: 10 },
+            { name: 'Myrat Bairamov', rank: 9 },
+            { name: 'Samar Hasanov', rank: 9 },
+            { name: 'Badraa Bat-Ulzii', rank: 8 },
+            { name: 'Nurbolat Aimakov', rank: 8 },
+            { name: 'Nasrulloh Yahyozoda', rank: 7 },
+            { name: 'Bekatan Satyev', rank: 8 },
+            { name: 'Baur Salim', rank: 7 },
+            { name: 'Dilshod Bakhtiyorov', rank: 7 },
+            { name: 'Hyewon Cho', rank: 6 },
+            { name: 'Marianna Li', rank: 6 },
+            { name: 'Zhibek Sadykova', rank: 6 },
+            { name: 'Bayarmaa Tumur-Ochir', rank: 4 },
+            { name: 'Rye Sanada', rank: 4 },
+            { name: 'Abel Worku', rank: 6 },
+            { name: 'Alex Morges', rank: 4 },
+            { name: 'Karakoz Mukhambetiyar', rank: 5 }
         ]
     } 
+
+    strongPlayersShuffle = () => {
+        console.log("Strong Players: ");
+        this.state.players.map(player => {
+            if (player.rank >= 8) {console.log(player.name)}
+            return null;
+        });
+
+    }
+
+    goodPlayersShuffle = () => {
+        console.log("Good Players: ");
+        this.state.players.map(player => {
+            if ((player.rank<8) && (player.rank>=5)) {console.log(player.name)}
+            return null;
+        });
+
+    }
+
+    learningPlayersShuffle = () => {
+        console.log("Learning Players: ");
+        this.state.players.map(player => {
+            if (player.rank <5) {console.log(player.name)}
+            return null;
+        });
+
+    }
+
 
 
     positionClickedHandler = (posId) => {
@@ -22,8 +71,12 @@ class VolleyBallCourt extends Component {
         });
         
         const updatedPosition = {...this.state.positions[posIndex]};
-
-        updatedPosition.player = 'Nurba';
+        
+        if (updatedPosition.player === 'Nurba') {
+            updatedPosition.player = updatedPosition.name;
+        }
+        else updatedPosition.player = 'Nurba'
+        
 
         const updatedPositions = [...this.state.positions]
         updatedPositions[posIndex].player = updatedPosition.player;
@@ -34,13 +87,18 @@ class VolleyBallCourt extends Component {
     }
 
     render(){
+
         return(
             <div className={classes.Volleyball}>
 
-                <div className={classes.LeftBig}></div>
-                <div className={classes.LeftSmall}></div>
-                <div className={classes.RightSmall}></div>
+                <div>List strong</div>
+
+                <div className={classes.LeftBig} onClick={this.strongPlayersShuffle}></div>
+                <div className={classes.LeftSmall} onClick={this.goodPlayersShuffle}></div>
+                <div className={classes.RightSmall} onClick={this.learningPlayersShuffle}></div>
                 <div className={classes.RightBig}></div>
+
+                
 
                 {this.state.positions.map((pos) => (
                     <Dot key={pos.id} position={pos.id} name={pos.player} clicked={() => this.positionClickedHandler(pos.id)}/>

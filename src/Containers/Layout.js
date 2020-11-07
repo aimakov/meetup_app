@@ -35,6 +35,8 @@ class Layout extends Component {
             <div>Sidebar - Meetup options</div>
             <div>Main Window - Setting up an event</div>
             <Volleyball/>
+
+
             </Aux>
             
             // <div className={classes.Toolbar}>Toolbar - Event Types</div>
