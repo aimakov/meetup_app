@@ -14,7 +14,7 @@ class Layout extends Component {
             {id: 'Mafia'},
             {id: 'Resistance'}
         ],
-        message: 'lol'
+        message: null
     }
 
     eventClickedHandler = (eventKey) => {
@@ -32,8 +32,6 @@ class Layout extends Component {
             <Aux>
             <Toolbar events={this.state.events} clicked={this.eventClickedHandler}/>
             <div>{this.state.message}</div>
-            <div>Sidebar - Meetup options</div>
-            <div>Main Window - Setting up an event</div>
             <Volleyball/>
 
 

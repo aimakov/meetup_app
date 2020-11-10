@@ -1,6 +1,8 @@
 import classes from './Volleyball.module.css';
 import React, { Component } from 'react';
 import Dot from '../../Event/Dot/Dot';
+import Players from '../../Event/Players/Players';
+import Aux from '../../../Auxiliary/Auxiliary'
 
 class VolleyBallCourt extends Component {
 
@@ -21,18 +23,19 @@ class VolleyBallCourt extends Component {
             { name: 'Samar Hasanov', rank: 9 },
             { name: 'Badraa Bat-Ulzii', rank: 8 },
             { name: 'Nurbolat Aimakov', rank: 8 },
-            { name: 'Nasrulloh Yahyozoda', rank: 7 },
             { name: 'Bekatan Satyev', rank: 8 },
+            { name: 'Nasrulloh Yahyozoda', rank: 7 },
             { name: 'Baur Salim', rank: 7 },
             { name: 'Dilshod Bakhtiyorov', rank: 7 },
             { name: 'Hyewon Cho', rank: 6 },
             { name: 'Marianna Li', rank: 6 },
             { name: 'Zhibek Sadykova', rank: 6 },
+            { name: 'Abel Worku', rank: 6 },
+            { name: 'Karakoz Mukhambetiyar', rank: 5 },
             { name: 'Bayarmaa Tumur-Ochir', rank: 4 },
             { name: 'Rye Sanada', rank: 4 },
-            { name: 'Abel Worku', rank: 6 },
             { name: 'Alex Morges', rank: 4 },
-            { name: 'Karakoz Mukhambetiyar', rank: 5 }
+            
         ]
     } 
 
@@ -89,22 +92,26 @@ class VolleyBallCourt extends Component {
     render(){
 
         return(
-            <div className={classes.Volleyball}>
+            <Aux>
 
-                <div>List strong</div>
+                <Players players={this.state.players} />
 
-                <div className={classes.LeftBig} onClick={this.strongPlayersShuffle}></div>
-                <div className={classes.LeftSmall} onClick={this.goodPlayersShuffle}></div>
-                <div className={classes.RightSmall} onClick={this.learningPlayersShuffle}></div>
-                <div className={classes.RightBig}></div>
 
-                
+                <div className={classes.Volleyball}>
 
-                {this.state.positions.map((pos) => (
-                    <Dot key={pos.id} position={pos.id} name={pos.player} clicked={() => this.positionClickedHandler(pos.id)}/>
-                ))}
+                    <div className={classes.LeftBig} onClick={this.strongPlayersShuffle}></div>
+                    <div className={classes.LeftSmall} onClick={this.goodPlayersShuffle}></div>
+                    <div className={classes.RightSmall} onClick={this.learningPlayersShuffle}></div>
+                    <div className={classes.RightBig}></div>
 
-            </div>
+
+                    {this.state.positions.map((pos) => (
+                        <Dot key={pos.id} position={pos.id} name={pos.player} clicked={() => this.positionClickedHandler(pos.id)}/>
+                    ))}
+
+                </div>
+            </Aux>
+            
         );
     }
 }

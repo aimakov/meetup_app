@@ -1,15 +1,16 @@
 import React from 'react';
-import Aux from '../../Auxiliary/Auxiliary';
+// import Aux from '../../Auxiliary/Auxiliary';
 import Event from '../Event/Event'
+import './Toolbar.css'
 
 const Toolbar = (props) => (
-    <Aux>
+    <div className='Toolbar'>
         {props.events.map((event) => {
             return <Event event={event.id} key={event.id} click = {() => props.clicked(event.id)}/>
         }
         
         )}
-    </Aux>       
+    </div>       
 );
 
 export default Toolbar;
